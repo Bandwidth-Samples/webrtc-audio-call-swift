@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		88FB5ABA25ACCD00006E1009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88FB5AB825ACCD00006E1009 /* Main.storyboard */; };
 		88FB5ABC25ACCD04006E1009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88FB5ABB25ACCD04006E1009 /* Assets.xcassets */; };
 		88FB5ABF25ACCD04006E1009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88FB5ABD25ACCD04006E1009 /* LaunchScreen.storyboard */; };
+		88FB5AC925ACD6A0006E1009 /* BandwidthRTC in Frameworks */ = {isa = PBXBuildFile; productRef = 88FB5AC825ACD6A0006E1009 /* BandwidthRTC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FB5AC925ACD6A0006E1009 /* BandwidthRTC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = WebRTCAudioCallStoryboard;
+			packageProductDependencies = (
+				88FB5AC825ACD6A0006E1009 /* BandwidthRTC */,
+			);
 			productName = WebRTCAudioCallStoryboard;
 			productReference = 88FB5AAF25ACCD00006E1009 /* WebRTCAudioCallStoryboard.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +115,9 @@
 				Base,
 			);
 			mainGroup = 88FB5AA625ACCD00006E1009;
+			packageReferences = (
+				88FB5AC725ACD6A0006E1009 /* XCRemoteSwiftPackageReference "webrtc-swift" */,
+			);
 			productRefGroup = 88FB5AB025ACCD00006E1009 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88FB5AC725ACD6A0006E1009 /* XCRemoteSwiftPackageReference "webrtc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Bandwidth/webrtc-swift.git";
+			requirement = {
+				branch = dev;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88FB5AC825ACD6A0006E1009 /* BandwidthRTC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88FB5AC725ACD6A0006E1009 /* XCRemoteSwiftPackageReference "webrtc-swift" */;
+			productName = BandwidthRTC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 88FB5AA725ACCD00006E1009 /* Project object */;
 }
