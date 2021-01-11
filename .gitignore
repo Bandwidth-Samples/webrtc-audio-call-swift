@@ -47,3 +47,6 @@ hs_err_pid*
 # Xcode
 xcuserdata/
 
+# Swift Package Manager
+Package.resolved
+
