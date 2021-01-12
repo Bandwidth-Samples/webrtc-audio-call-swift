@@ -13,7 +13,7 @@
 		88FB5ABA25ACCD00006E1009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88FB5AB825ACCD00006E1009 /* Main.storyboard */; };
 		88FB5ABC25ACCD04006E1009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88FB5ABB25ACCD04006E1009 /* Assets.xcassets */; };
 		88FB5ABF25ACCD04006E1009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88FB5ABD25ACCD04006E1009 /* LaunchScreen.storyboard */; };
-		88FB5AC925ACD6A0006E1009 /* BandwidthRTC in Frameworks */ = {isa = PBXBuildFile; productRef = 88FB5AC825ACD6A0006E1009 /* BandwidthRTC */; };
+		88FB5AD025ACF0B9006E1009 /* BandwidthWebRTC in Frameworks */ = {isa = PBXBuildFile; productRef = 88FB5ACF25ACF0B9006E1009 /* BandwidthWebRTC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88FB5AC925ACD6A0006E1009 /* BandwidthRTC in Frameworks */,
+				88FB5AD025ACF0B9006E1009 /* BandwidthWebRTC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +44,7 @@
 			children = (
 				88FB5AB125ACCD00006E1009 /* WebRTCAudioCallStoryboard */,
 				88FB5AB025ACCD00006E1009 /* Products */,
+				88FB5ACE25ACF0B9006E1009 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +70,13 @@
 			path = WebRTCAudioCallStoryboard;
 			sourceTree = "<group>";
 		};
+		88FB5ACE25ACF0B9006E1009 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,7 +94,7 @@
 			);
 			name = WebRTCAudioCallStoryboard;
 			packageProductDependencies = (
-				88FB5AC825ACD6A0006E1009 /* BandwidthRTC */,
+				88FB5ACF25ACF0B9006E1009 /* BandwidthWebRTC */,
 			);
 			productName = WebRTCAudioCallStoryboard;
 			productReference = 88FB5AAF25ACCD00006E1009 /* WebRTCAudioCallStoryboard.app */;
@@ -360,10 +368,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		88FB5AC825ACD6A0006E1009 /* BandwidthRTC */ = {
+		88FB5ACF25ACF0B9006E1009 /* BandwidthWebRTC */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 88FB5AC725ACD6A0006E1009 /* XCRemoteSwiftPackageReference "webrtc-swift" */;
-			productName = BandwidthRTC;
+			productName = BandwidthWebRTC;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
