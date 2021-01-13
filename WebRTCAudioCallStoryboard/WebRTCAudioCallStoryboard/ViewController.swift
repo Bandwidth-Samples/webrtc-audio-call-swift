@@ -31,7 +31,7 @@ class ViewController: UIViewController {
                 try self.webRTC.connect(using: token) {
                     print("Connected to Bandwidth's WebRTC server.")
                     
-                    self.webRTC.publish(mediaTypes: [.audio]) {
+                    self.webRTC.publish(audio: true, video: false) {
                         self.statusLabel.text = "Online, no call"
                         self.callButton.isEnabled = true
                     }
@@ -137,7 +137,7 @@ class ViewController: UIViewController {
             }
             
             completion()
-        }
+        }.resume()
     }
 }
 
