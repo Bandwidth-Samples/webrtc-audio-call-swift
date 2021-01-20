@@ -16,22 +16,22 @@ class ViewController: UIViewController {
     
     private let address = "http://localhost:3000"
     
-    private var webRTC = WebRTC()
+    private var bandwidth = RTCBandwidth()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webRTC.delegate = self
+        bandwidth.delegate = self
     }
 
     @IBAction func connect(_ sender: Any) {
         // Grab the Bandwidth provided token from your hosted server application.
         getToken { token in
             do {
-                try self.webRTC.connect(using: token) {
+                try self.bandwidth.connect(using: token) {
                     print("Connected to Bandwidth's WebRTC server.")
                     
-                    self.webRTC.publish(audio: true, video: false) {
+                    self.bandwidth.publish(audio: true, video: false, alias: nil) {
                         self.statusLabel.text = "Online, no call"
                         self.callButton.isEnabled = true
                     }
@@ -141,20 +141,12 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: WebRTCDelegate {
-    func webRTC(_ webRTC: WebRTC, didChangePeerConnectionState state: PeerConnectionState?, with error: WebRTCError?) {
-        if let state = state {
-            print("Peer connection state: \(state)")
-        } else if let error = error {
-            print(error.localizedDescription)
-        }
+extension ViewController: RTCBandwidthDelegate {
+    func bandwidth(_ bandwidth: RTCBandwidth, streamAvailableAt endpointId: String, participantId: String, alias: String?, mediaTypes: [MediaType], mediaStream: RTCMediaStream?) {
+
     }
     
-    func webRTC(_ webRTC: WebRTC, didReceiveRemoteSDP sdp: RTCSessionDescription) {
-        
-    }
-    
-    func webRTC(_ webRTC: WebRTC, didReceiveRemoteICECandidate candidate: RTCIceCandidate) {
-        
+    func bandwidth(_ bandwidth: RTCBandwidth, streamUnavailableAt endpointId: String) {
+
     }
 }
