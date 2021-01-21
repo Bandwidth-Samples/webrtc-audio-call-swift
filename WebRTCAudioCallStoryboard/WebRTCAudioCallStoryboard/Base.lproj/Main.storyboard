@@ -19,18 +19,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2wa-cq-jeS">
                                 <rect key="frame" x="147" y="420.5" width="120" height="55"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJU-FY-rTy">
-                                        <rect key="frame" x="0.0" y="0.0" width="56" height="55"/>
-                                        <color key="tintColor" systemColor="systemGreenColor"/>
-                                        <state key="normal" image="phone.circle.fill" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="48" scale="default" weight="regular"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="call:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D5u-xI-jwo"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3o-70-AzV">
-                                        <rect key="frame" x="64" y="0.0" width="56" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="55"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" image="phone.down.circle.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="48" scale="default" weight="regular"/>
@@ -40,16 +30,26 @@
                                             <action selector="endCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xQV-qZ-QdA"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJU-FY-rTy">
+                                        <rect key="frame" x="64" y="0.0" width="56" height="55"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" image="phone.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="48" scale="default" weight="regular"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="call:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D5u-xI-jwo"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="PJU-FY-rTy" secondAttribute="trailing" id="FEh-Gz-95h"/>
                                     <constraint firstItem="PJU-FY-rTy" firstAttribute="top" secondItem="2wa-cq-jeS" secondAttribute="top" id="HCO-fF-czX"/>
                                     <constraint firstAttribute="bottom" secondItem="PJU-FY-rTy" secondAttribute="bottom" id="OIS-aA-SLZ"/>
                                     <constraint firstAttribute="bottom" secondItem="L3o-70-AzV" secondAttribute="bottom" id="Zmb-il-ryh"/>
+                                    <constraint firstItem="L3o-70-AzV" firstAttribute="leading" secondItem="2wa-cq-jeS" secondAttribute="leading" id="eNZ-c7-jAf"/>
                                     <constraint firstItem="L3o-70-AzV" firstAttribute="top" secondItem="2wa-cq-jeS" secondAttribute="top" id="niR-eI-Mub"/>
-                                    <constraint firstItem="L3o-70-AzV" firstAttribute="leading" secondItem="PJU-FY-rTy" secondAttribute="trailing" constant="8" symbolic="YES" id="p97-ZT-eP8"/>
-                                    <constraint firstAttribute="trailing" secondItem="L3o-70-AzV" secondAttribute="trailing" id="va1-7a-mCn"/>
-                                    <constraint firstItem="PJU-FY-rTy" firstAttribute="leading" secondItem="2wa-cq-jeS" secondAttribute="leading" id="xCF-rm-hLV"/>
+                                    <constraint firstItem="PJU-FY-rTy" firstAttribute="leading" secondItem="L3o-70-AzV" secondAttribute="trailing" constant="8" symbolic="YES" id="zpQ-Eh-Ceg"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZH-LY-CXi">
