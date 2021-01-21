@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		886C1DFE25B9D22200DADFE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C1DFD25B9D22200DADFE5 /* Settings.swift */; };
+		886C1E0225B9E0A400DADFE5 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 886C1E0125B9E0A400DADFE5 /* Config.plist */; };
 		88FB5AB325ACCD00006E1009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FB5AB225ACCD00006E1009 /* AppDelegate.swift */; };
 		88FB5AB525ACCD00006E1009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FB5AB425ACCD00006E1009 /* SceneDelegate.swift */; };
 		88FB5AB725ACCD00006E1009 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FB5AB625ACCD00006E1009 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		886C1DFD25B9D22200DADFE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		886C1E0125B9E0A400DADFE5 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		88FB5AAF25ACCD00006E1009 /* WebRTCAudioCallStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebRTCAudioCallStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FB5AB225ACCD00006E1009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88FB5AB425ACCD00006E1009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 		88FB5AB125ACCD00006E1009 /* WebRTCAudioCallStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				886C1DFD25B9D22200DADFE5 /* Settings.swift */,
 				88FB5AB225ACCD00006E1009 /* AppDelegate.swift */,
 				88FB5AB425ACCD00006E1009 /* SceneDelegate.swift */,
 				88FB5AB625ACCD00006E1009 /* ViewController.swift */,
@@ -66,6 +71,7 @@
 				88FB5ABB25ACCD04006E1009 /* Assets.xcassets */,
 				88FB5ABD25ACCD04006E1009 /* LaunchScreen.storyboard */,
 				88FB5AC025ACCD04006E1009 /* Info.plist */,
+				886C1E0125B9E0A400DADFE5 /* Config.plist */,
 			);
 			path = WebRTCAudioCallStoryboard;
 			sourceTree = "<group>";
@@ -142,6 +148,7 @@
 			files = (
 				88FB5ABF25ACCD04006E1009 /* LaunchScreen.storyboard in Resources */,
 				88FB5ABC25ACCD04006E1009 /* Assets.xcassets in Resources */,
+				886C1E0225B9E0A400DADFE5 /* Config.plist in Resources */,
 				88FB5ABA25ACCD00006E1009 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886C1DFE25B9D22200DADFE5 /* Settings.swift in Sources */,
 				88FB5AB725ACCD00006E1009 /* ViewController.swift in Sources */,
 				88FB5AB325ACCD00006E1009 /* AppDelegate.swift in Sources */,
 				88FB5AB525ACCD00006E1009 /* SceneDelegate.swift in Sources */,

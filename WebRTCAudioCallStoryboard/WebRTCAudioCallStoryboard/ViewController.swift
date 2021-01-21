@@ -13,9 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var endCallButton: UIButton!
-    
-    private let address = "http://localhost:3000"
-    
+
     private var bandwidth = RTCBandwidth()
     
     override func viewDidLoad() {
@@ -67,7 +65,7 @@ class ViewController: UIViewController {
     func getToken(completion: @escaping (String) -> Void) {
         print("Fetching media token from server application.")
 
-        guard let url = URL(string: "\(address)/startBrowserCall") else {
+        guard let url = URL(string: "\(Settings.default.address)/startBrowserCall") else {
             return
         }
 
@@ -93,7 +91,7 @@ class ViewController: UIViewController {
     func call(completion: @escaping () -> Void) {
         print("Starting PSTN call through server application.")
         
-        guard let url = URL(string: "\(address)/startPSTNCall") else {
+        guard let url = URL(string: "\(Settings.default.address)/startPSTNCall") else {
             return
         }
         
@@ -118,7 +116,7 @@ class ViewController: UIViewController {
     func endCall(completion: @escaping () -> Void) {
         print("Ending PSTN call through server application.")
         
-        guard let url = URL(string: "\(address)/endPSTNCall") else {
+        guard let url = URL(string: "\(Settings.default.address)/endPSTNCall") else {
             return
         }
         
