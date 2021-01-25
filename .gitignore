@@ -17,7 +17,7 @@
 .vscode/
 
 # Node
-/node_modules
+node_modules/
 
 # Bandwidth environment
 .env
