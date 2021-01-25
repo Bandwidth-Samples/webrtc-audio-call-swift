@@ -13,9 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var endCallButton: UIButton!
-
-    private var bandwidth = RTCBandwidth()
+    @IBOutlet weak var connectBarButtonItem: UIBarButtonItem!
     
+    private var bandwidth = RTCBandwidth()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,11 +28,17 @@ class ViewController: UIViewController {
         getToken { token in
             do {
                 try self.bandwidth.connect(using: token) {
+                    DispatchQueue.main.async {
+                        self.connectBarButtonItem.title = "Disconnect"
+                    }
+                    
                     print("Connected to Bandwidth's WebRTC server.")
                     
                     self.bandwidth.publish(audio: true, video: false, alias: nil) {
-                        self.statusLabel.text = "Online, no call"
-                        self.callButton.isEnabled = true
+                        DispatchQueue.main.async {
+                            self.statusLabel.text = "Online, no call"
+                            self.callButton.isEnabled = true
+                        }
                     }
                 }
             }

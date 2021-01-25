@@ -77,6 +77,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="callButton" destination="PJU-FY-rTy" id="zCd-Xy-1UA"/>
+                        <outlet property="connectBarButtonItem" destination="v1E-9z-n3T" id="03O-8m-6qX"/>
                         <outlet property="endCallButton" destination="L3o-70-AzV" id="SCv-92-8pZ"/>
                         <outlet property="statusLabel" destination="nZH-LY-CXi" id="DXR-ec-KXy"/>
                     </connections>
