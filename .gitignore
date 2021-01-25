@@ -19,6 +19,9 @@
 # Node
 /node_modules
 
+# Bandwidth environment
+.env
+
 # PHP
 **/vendor/*
 *.phar
