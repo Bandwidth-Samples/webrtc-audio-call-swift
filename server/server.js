@@ -193,7 +193,7 @@ async function createParticipant(account_id, tag) {
   // create a participant for this browser user
   var participantBody = new BandwidthWebRTC.Participant({
     tag: tag,
-    publishPermissions: ["AUDIO", "VIDEO"],
+    publishPermissions: ["AUDIO"],
   });
 
   try {
