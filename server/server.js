@@ -1,10 +1,8 @@
-const fs = require("fs");
 const express = require("express");
 const BandwidthWebRTC = require("@bandwidth/webrtc");
 const BandwidthVoice = require("@bandwidth/voice");
 const uuid = require("uuid");
 const dotenv = require("dotenv").config();
-const jwt_decode = require("jwt-decode");
 const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
