@@ -10,7 +10,6 @@ app.use(express.static("public"));
 
 // config
 const port = 3000;
-const localDir = __dirname;
 const accountId = process.env.BANDWIDTH_ACCOUNT_ID;
 
 // Global variables
