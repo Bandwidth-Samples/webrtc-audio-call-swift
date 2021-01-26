@@ -1,4 +1,4 @@
-# Repo Title REPLACE
+# WebRTC Audio Call
 <a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW-VMP.png"/></a>
 </div>
 
@@ -6,7 +6,7 @@
 
 <!-- TOC -->
 
-- [Repo Title REPLACE](#repo-title-replace)
+- [WebRTC Audio Call](#webrtc-audio-call)
 - [Description](#description)
 - [Bandwidth](#bandwidth)
 - [Environmental Variables](#environmental-variables)
@@ -16,7 +16,57 @@
 <!-- /TOC -->
 
 # Description
-A short description of your sample app and its capabilities.
+This sample allows for an iOS device to call a phone number using WebRTC audio.
+
+# Setup
+
+In order to run this sample `WebRTC Audio` is required to be enabled on your account. Please check with your account manager to ensure you are properly provisioned.
+
+## Configure your HTTP server
+
+Copy the default configuration file `.env.default` to `.env`.
+
+```bash
+cp .env.default .env
+```
+
+Add your Bandwidth account settings to the new configuration file `.env`.
+
+Bandwidth account credentials
+- BANDWIDTH_ACCOUNT_ID
+- BANDWIDTH_USERNAME
+- BANDWIDTH_PASSWORD
+
+Voice application id from Bandwidth
+- BANDWIDTH_VOICE_APPLICATION_ID
+
+Bandwidth phone number which is the calling from phone number
+- BANDWIDTH_PHONE_NUMBER
+
+Phone number which is the calling to phone number
+- OUTBOUND_PHONE_NUMBER
+
+Your server, e.g. ngrok server, with trailing slash
+- BASE_URL
+
+Install server dependencies and run.
+
+```bash
+npm install
+node server.js
+```
+
+## Configure your iOS project
+
+Open the `WebRTCVideoStoyboard` project in Xcode.
+
+Add a property list file `Config.plist` to your project. This should be added to the `WebRTCAudioStoryboard` folder alongside `Info.plist`.
+
+Add a row to the `Config.plist` property list file with a key `Address` and type `String`. Set the value of the row to the server application address which is accessible to the iOS devices. An ngrok url works well for this.
+
+With the server project running build and run the iOS project on your device from Xcode.
+
+While the device is running the app tap `Connect`. Permissions to your microphone may need to be granted at this time. Once connected tap the large green button to start your phone call.
 
 # Bandwidth
 
@@ -28,15 +78,14 @@ For more information about API credentials see [here](https://dev.bandwidth.com/
 
 # Environmental Variables
 The sample app uses the below environmental variables.
-```java
+```
 BANDWIDTH_ACCOUNT_ID                 // Your Bandwidth Account Id
 BANDWIDTH_USERNAME                   // Your Bandwidth API Username
 BANDWIDTH_PASSWORD                   // Your Bandwidth API Password
-BANDWIDTH_PHONE_NUMBER                // Your The Bandwidth Phone Number
+BANDWIDTH_PHONE_NUMBER               // Your Bandwidth Phone Number
 BANDWIDTH_VOICE_APPLICATION_ID       // Your Voice Application Id created in the dashboard
-BANDWIDTH_MESSAGING_APPLICATION_ID   // Your Messaging Application Id created in the dashboard
-BASE_URL                             // Your public base url
-PORT                                 // The port number you wish to run the sample on
+OUTBOUND_PHONE_NUMBER                // Phone number which is the calling to phone number
+BASE_URL                             // Your server, e.g. ngrok server, with trailing slash
 ```
 
 # Callback URLs
@@ -44,8 +93,7 @@ PORT                                 // The port number you wish to run the samp
 For a detailed introduction to Bandwidth Callbacks see https://dev.bandwidth.com/guides/callbacks/callbacks.html
 
 Below are the callback paths:
-* `/callbacks/voiceCallback`
-* `<add other callbacks>`
+* `/callAnswered`
 
 ## Ngrok
 
