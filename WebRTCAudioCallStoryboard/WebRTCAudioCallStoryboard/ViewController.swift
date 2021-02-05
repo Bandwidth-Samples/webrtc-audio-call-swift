@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var endCallButton: UIButton!
+    @IBOutlet weak var muteBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var connectBarButtonItem: UIBarButtonItem!
+    
+    private var mute = false
     
     private var bandwidth = RTCBandwidth()
 
@@ -36,6 +39,9 @@ class ViewController: UIViewController {
                     
                     self.bandwidth.publish(audio: true, video: false, alias: nil) {
                         DispatchQueue.main.async {
+                            // Enable the mute button once we've started publishing.
+                            self.muteBarButtonItem.isEnabled = true
+                            
                             self.statusLabel.text = "Online, no call"
                             self.callButton.isEnabled = true
                         }
@@ -143,6 +149,17 @@ class ViewController: UIViewController {
             
             completion()
         }.resume()
+    }
+    
+    @IBAction func mute(_ sender: Any) {
+        // Toggle the local mute state.
+        mute.toggle()
+        
+        // Toggle the title of the mute button to display to the user.
+        muteBarButtonItem.title = mute ? "Unmute" : "Mute"
+        
+        // Set the audio of all local WebRTC connections.
+        bandwidth.setAudio(isEnabled: !mute)
     }
 }
 

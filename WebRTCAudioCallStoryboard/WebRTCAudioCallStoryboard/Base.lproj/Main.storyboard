@@ -69,6 +69,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Call" id="yvc-RD-rAu">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Mute" id="xni-fk-Jiv">
+                            <connections>
+                                <action selector="mute:" destination="BYZ-38-t0r" id="BtZ-pO-nmu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Connect" id="v1E-9z-n3T">
                             <connections>
                                 <action selector="connect:" destination="BYZ-38-t0r" id="oOD-zb-aqK"/>
@@ -79,6 +84,7 @@
                         <outlet property="callButton" destination="PJU-FY-rTy" id="zCd-Xy-1UA"/>
                         <outlet property="connectBarButtonItem" destination="v1E-9z-n3T" id="03O-8m-6qX"/>
                         <outlet property="endCallButton" destination="L3o-70-AzV" id="SCv-92-8pZ"/>
+                        <outlet property="muteBarButtonItem" destination="xni-fk-Jiv" id="RLE-1J-fx2"/>
                         <outlet property="statusLabel" destination="nZH-LY-CXi" id="DXR-ec-KXy"/>
                     </connections>
                 </viewController>
