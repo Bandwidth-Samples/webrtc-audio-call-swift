@@ -33,21 +33,21 @@ cp .env.default .env
 Add your Bandwidth account settings to the new configuration file `.env`.
 
 Bandwidth account credentials
-- BANDWIDTH_ACCOUNT_ID
-- BANDWIDTH_USERNAME
-- BANDWIDTH_PASSWORD
+- BW_ACCOUNT_ID
+- BW_USERNAME
+- BW_PASSWORD
 
 Voice application id from Bandwidth
-- BANDWIDTH_VOICE_APPLICATION_ID
+- BW_VOICE_APPLICATION_ID
 
 Bandwidth phone number which is the calling from phone number
-- BANDWIDTH_PHONE_NUMBER
+- BW_NUMBER
 
 Phone number which is the calling to phone number
-- OUTBOUND_PHONE_NUMBER
+- USER_NUMBER
 
 Your server, e.g. ngrok server, with trailing slash
-- BASE_URL
+- BASE_CALLBACK_URL
 
 Install server dependencies and run.
 
@@ -78,14 +78,14 @@ For more information about API credentials see [here](https://dev.bandwidth.com/
 
 # Environmental Variables
 The sample app uses the below environmental variables.
-```
-BANDWIDTH_ACCOUNT_ID                 // Your Bandwidth Account Id
-BANDWIDTH_USERNAME                   // Your Bandwidth API Username
-BANDWIDTH_PASSWORD                   // Your Bandwidth API Password
-BANDWIDTH_PHONE_NUMBER               // Your Bandwidth Phone Number
-BANDWIDTH_VOICE_APPLICATION_ID       // Your Voice Application Id created in the dashboard
-OUTBOUND_PHONE_NUMBER                // Phone number which is the calling to phone number
-BASE_URL                             // Your server, e.g. ngrok server, with trailing slash
+```sh 
+BW_ACCOUNT_ID                 # Your Bandwidth Account Id
+BW_USERNAME                   # Your Bandwidth API Username
+BW_PASSWORD                   # Your Bandwidth API Password
+BW_NUMBER                     # Your Bandwidth Phone Number
+BW_VOICE_APPLICATION_ID       # Your Voice Application Id created in the dashboard
+USER_NUMBER                   # Phone number which is the calling to phone number
+BASE_CALLBACK_URL             # Your server, e.g. ngrok server, with trailing slash
 ```
 
 # Callback URLs
