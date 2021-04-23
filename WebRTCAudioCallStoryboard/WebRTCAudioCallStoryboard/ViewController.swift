@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     private var mute = false
     
     private var bandwidth = RTCBandwidth()
+    private var audioSender: RTCRtpSender?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,10 @@ class ViewController: UIViewController {
                     
                     print("Connected to Bandwidth's WebRTC server.")
                     
-                    self.bandwidth.publish(audio: true, video: false, alias: nil) {
+                    self.bandwidth.publish(audio: true, video: false, alias: nil) { (endpointId, mediaTypes, audioSender, videoSender) in
                         DispatchQueue.main.async {
+                            self.audioSender = audioSender
+                            
                             // Enable the mute button once we've started publishing.
                             self.muteBarButtonItem.isEnabled = true
                             
@@ -158,14 +161,14 @@ class ViewController: UIViewController {
         // Toggle the title of the mute button to display to the user.
         muteBarButtonItem.title = mute ? "Unmute" : "Mute"
         
-        // Set the audio of all local WebRTC connections.
-        bandwidth.setAudio(isEnabled: !mute)
+        // Set the audio of our local WebRTC connection.
+        audioSender?.track?.isEnabled = !mute
     }
 }
 
 extension ViewController: RTCBandwidthDelegate {
-    func bandwidth(_ bandwidth: RTCBandwidth, streamAvailableAt endpointId: String, participantId: String, alias: String?, mediaTypes: [MediaType], mediaStream: RTCMediaStream?) {
-
+    func bandwidth(_ bandwidth: RTCBandwidth, streamAvailableAt endpointId: String, participantId: String, alias: String?, mediaTypes: [MediaType], rtpReceiver: RTCRtpReceiver) {
+        
     }
     
     func bandwidth(_ bandwidth: RTCBandwidth, streamUnavailableAt endpointId: String) {
