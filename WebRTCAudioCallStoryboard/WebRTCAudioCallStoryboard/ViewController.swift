@@ -31,6 +31,15 @@ class ViewController: UIViewController {
     @IBAction func connect(_ sender: Any) {
         if isConnected {
             bandwidth.disconnect()
+            
+            statusLabel.text = "Offline"
+            
+            callButton.isEnabled = false
+            endCallButton.isEnabled = false
+            
+            muteBarButtonItem.isEnabled = false
+            
+            connectBarButtonItem.title = "Connect"
             isConnected = false
         } else {
             // Grab the Bandwidth provided token from your hosted server application.
