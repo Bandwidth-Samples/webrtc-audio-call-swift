@@ -194,6 +194,7 @@ async function createParticipant(account_id, tag) {
   var participantBody = new BandwidthWebRTC.Participant({
     tag: tag,
     publishPermissions: ["AUDIO"],
+    deviceApiVersion: 'V3'
   });
 
   try {
@@ -246,7 +247,7 @@ async function initiateCallToPSTN(account_id, from_number, to_number) {
     from: from_number,
     to: to_number,
     applicationId: process.env.BW_VOICE_APPLICATION_ID,
-    answerUrl: process.env.BASE_CALLBACK_URL + "callAnswered",
+    answerUrl: process.env.BASE_CALLBACK_URL + "/callAnswered",
     answerMethod: "POST",
     callTimeout: "30",
   });
